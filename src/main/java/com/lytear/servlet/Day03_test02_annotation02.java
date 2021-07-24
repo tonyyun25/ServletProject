@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/test02_annotation02")
-public class test02_annotation02 extends HttpServlet {
+public class Day03_test02_annotation02 extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		// 앞으로 xml  열지 말고 WebServlet

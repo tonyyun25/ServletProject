@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/ex01url") // 모듈에서 설정 변경했다면 "servlet/~"이 아니라 바로 "/~"
 
-public class ex01url extends HttpServlet{
+public class Day03_ex01url extends HttpServlet{
 
 
 	@Override

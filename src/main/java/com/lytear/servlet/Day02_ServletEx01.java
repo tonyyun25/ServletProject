@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ServletEx01 extends HttpServlet { // 톰캣에 연동해서 웹서비스 한다면 무조건 이렇게 상속
+public class Day02_ServletEx01 extends HttpServlet { // 톰캣에 연동해서 웹서비스 한다면 무조건 이렇게 상속
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {// 메소드에서 두 개 파라미터 받음

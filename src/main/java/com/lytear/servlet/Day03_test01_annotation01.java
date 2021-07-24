@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/test01_annotation01") 
-public class test01_annotation01 extends HttpServlet {
+public class Day03_test01_annotation01 extends HttpServlet {
 
 	
 		@Override
