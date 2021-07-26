@@ -7,7 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet("/servlet/DDay04_ServletEx03") // 이곳은 태그를 눌렀을 때 내가 이동할 클래스 파일명이다
+@WebServlet("/servlet/DDay04_ServletEx03") // webapp 파일명과 url 매핑 주소는 일치해야 한다
 public class DDay04_ServletEx03 extends HttpServlet {
 
 	

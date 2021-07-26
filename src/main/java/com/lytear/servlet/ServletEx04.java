@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 // http://localhost:8080/servlet/ex03?user_id=jinil&name=kim?age=30
 // 위 형태로 값 받으려면 request에서 값 꺼내와야 함
-@WebServlet("/servlet/ex04") // url 매핑 : webapp 아래 폴더 아래 이름명임
-public class Day04_ServletEx03_method extends HttpServlet {
+@WebServlet("/servlet/ex04_2") // webapp 파일명과 url 매핑 주소는 일치해야 한다
+public class ServletEx04 extends HttpServlet {
 
 	/*
 	 * 웹서버도 함수다

@@ -25,14 +25,10 @@ public class Day05_getHtml extends HttpServlet {
 			int number = Integer.parseInt(request.getParameter("number"));
 			
 			out.println("<html> <head> <title> 구구단 </title> </head>");
-			out.println("<body> <ul>");
+			out.println("<body> <ul>");	
 			
 			
-			
-			
-			
-			for(int i = 1; i <= 9; i++) {
-				
+			for(int i = 1; i <= 9; i++) {				
 				
 				out.println("<li>" + number + " X "+ i + " = " + (number * i) + "</li>");
 			}	

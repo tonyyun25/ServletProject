@@ -37,7 +37,7 @@ public class Day02_ServletEx01 extends HttpServlet { // 톰캣에 연동해서 �
 		
 		/*
 	404가 나오는이유는 일반적으로
-url pattrn 쪽 이랑 주소 쪽이 맞지 않을경우와
+url pattern 쪽 이랑 주소 쪽이 맞지 않을경우와
 대소문자가 명확하지 안을때 발생을 마니 합니다
 
 

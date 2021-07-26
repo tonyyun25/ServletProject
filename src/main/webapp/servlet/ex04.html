@@ -2,9 +2,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>get link</title>
+<title>정보입력</title>
 </head>
 <body>
-	<a href="/servlet/Day04_ServletEx03?user_id=jinil&name=윤진일&age=27">링크 태그</a>
+	<h1>회원정보 입력</h1>	
+	<form method="get" action="/servlet/ex04">
+		<lable>아이디</lable>
+		<input type="text" name="user_id"><br>
+		
+		<lable>이름</lable>
+		<input type="text" name="name"><br>
+		
+		<lable>생년월일</lable>
+		<input type="text" name="birth"><br>
+		
+		<lable>이메일 주소</lable>
+		<input type="text" name="email"><br>
+		
+		<input type = "submit" value="가입하기">
+	
+	</form>
+	
 </body>
 </html>
