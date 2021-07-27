@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>주문하기</title>
+	<!-- bootstrap CDN link 4줄 -->
+	<meta charset="UTF-8">
+	<title>주문하기</title>
 </head>
 <body>
-	<form method="get" action="/servlet/test07">
-		<h1>주문</h1>
-		<label>주소</label>
-		<input type="text" name="address"><br>
-		<label>결제카드</label>
-		<input type="text" name="card"><br>
-		<label>가격</label>
-		<input type="text" name="price"><br>
-		<input type="submit" value="주문">
-	</form>
+	<div class="container">
+		<form method="get" action="/servlet/test07">
+			<div class="form-group">
+				<label for="address">주소</label>
+				<input class="form=control col-5" type="text" id= address name="address"><br>
+			</div>
+			
+			<div class="form-group">
+				<label>결제카드</label>
+				<input class="form=control col-5" type="text" id= address  name="card"><br>
+			</div>
+			
+			<div class="form-group">
+				<label>가격</label>
+				<input class="form=control col-5" type="text" id= address  name="money"><br>
+			</div>
+			
+			<input type="submit" value="주문">
+		</form>
+	</div>	
+		
 </body>
 </html>
