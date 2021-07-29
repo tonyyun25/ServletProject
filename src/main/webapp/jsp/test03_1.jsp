@@ -1,29 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- bootstrap CDN link 4줄 -->
 	<meta charset="UTF-8">
-	<title>검색하기</title>
+	<title> 정보입력 </title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	
-	
+
+
 </head>
 <body>
 	<div class="container">
-	
-		<h2>검색</h2>
-		<form method="get" action="/servlet/test08">
-		
-		
-			
-				<input type="text" class="form-control" name="keyword" placeholder="검색어를 입력하세요.">
-				<!-- input box 하나일 때도 name 지정해야 파라미터 주소에 파라미터 인식되어 넘어감 -->
-				<input type="submit" class="btn btn-primary" value="검색">
-				
-		
+		<h1> 체격 조건 입력 </h1>
+		<form method="get" action="/jsp/test03_2.jsp">
+		<!--  그냥 내가 부를 페이지를 action 에 넣은 것이지 둘이 끈끈한 관계 있지는 않아 -->
+			<input type="text" class="form-control" name="height" placeholder="키를 입력하세요">
+			<input type="text" class="form-control" name="weight" placeholder="몸무게를 입력하세요" >
+			<input type="submit" class="btn btn-info" value="계산">
 		</form>
 	</div>
 </body>
