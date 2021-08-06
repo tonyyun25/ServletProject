@@ -15,59 +15,84 @@
 
 	<%
 		
-		String sizeChangeString = request.getParameter("sizeChange");
-		double sizeChange = Integer.parseInt(sizeChangeString);
+		//String sizeChangeString = request.getParameter("length");
+		int centimeter = Integer.parseInt(request.getParameter("length"));
 		
-		String[] sizeArray = request.getParameterValues("size");
+		String[] types = request.getParameterValues("type");
+	%>	
+	
+	<h2>변환결과</h2>
+	<h3><%=centimeter %>cm</h3>
+	<hr>
+	
+	
+	 	
 		
-		String inch = null;
-		String yard = null;
-		String feet = null;
-		String meter = null;
 		
-		
+	
+		<!-- 
 		String result = "";
-		for(int i = 0; i < sizeArray.length; i++) {
-			
-			if(sizeArray[i].equals("inch")) {
-				inch = String.format("%.2f", sizeChange / 2.54);
-				//inch = String.valueOf(sizeChange / 2.54);
-				result += inch + " in" + "<br>";
-			}
-			else if(sizeArray[i].equals("yard")) {
-				yard = String.format("%.2f", sizeChange / 91.44);
-				
-				result += yard + " yd" + "<br>";
-			}
-			else if(sizeArray[i].equals("feet")) {
-				feet = String.format("%.2f", sizeChange / 30.48);
-				
-				result += feet + " ft" + "<br>";
-			}
-			else if(sizeArray[i].equals("meter")) {
-				meter = String.format("%.2f", sizeChange / 100);
-				
-				result += meter + " m" + "<br>";
-			}			
+		// 방법1. 자바 코드 반복문 안에서 출력하는 방법. out이라는 객체를 jsp에서 기본으로 제공함
+		// 추천 안 함. 소스 안에 포함되어 있어 출력되는지 안 되는지 눈에 잘 안 들어와
+		/*for(int i = 0; i < types.length; i++) {
+			out.println("테스트");
+		
 		}
-		//result = result.substring(0,result.length() - 1);
+		
+		
+			
+		
+		방법2	: for 문을 열고 닫는 걸 쪼개 버려서 그 중간에 출력 넣음. 실제 반복문 이거 제일 많이 씀 --> 
+	
+	
+	<% 	
+		//double inch = String.format("%.2f", centimeter / 2.54);
+		//inch = String.valueOf(sizeChange / 2.54);
+		//아래는 제일 손쉬은 출력 방법(코드 안 출력까지 한 번에 하는 건 추천은 X => html 코드 부분은 쪼개라)
+		// out.println(inch + "in<br>");
+	
+		for(int i = 0; i < types.length; i++) {	
+			String type = types[i];
+			
+			if(types.equals("inch")) {
+				double inch = centimeter * 0.39;
+				%>
+			
+				<h3><%=inch %> in <br></h3>
+			<% //자바코드 입력 필요하니깐 다시 열어준다
+			} else if(types.equals("yard")) {
+				double yard = centimeter * 0.010936133;
+				%>
+				
+				<h3><%=yard %>yd <br></h3>
+				<!-- out.println(yard + "yd<br>");-->
+			<% 
+			} else if(types.equals("feet")) {
+				double feet = centimeter * 0.32808399;
+				%>
+				
+				<h3><%=feet %>ft <br></h3>
+				<!-- out.println(feet + "ft<br>");-->
+			<%
+			} else if(types.equals("meter")) {
+				double meter = centimeter / 100.0;
+				%>
+				
+				<h3><%=meter %>m <br></h3>
+				<!-- out.println(feet + "ft<br>");-->
+			<%
+			} 	
+		}
+		
+		//
+		
+		//<!-- result = result.substring(0,result.length() - 1);-->
 		//반복문 통해 체크된 개수만큼만 출력한다. 출력할 결과를 문자열로 만들어놓고 마지막에 출력한다
 		// 체크된 세개줄만 하나의 문자열에 다 저장시키고 줄바꿈은 br tag
 		// for, if 이용해 차곡차곡 String 쌓아줘
-		// String afterSize = null;
-		
-		
-		
-	
+		// String afterSize = null; -->
 	%>
-	
-	<div class="container">
-		<h1>변환결과</h1>
-		<b><%= sizeChange %>cm</b>
-		<hr>
-		<b><%= result %></b>
-	
-	</div>
+
 
 </body>
 </html>

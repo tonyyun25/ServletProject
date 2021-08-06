@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,26 +11,78 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+
 </head>
 <body>
-	<div class="container">
-		<h1>길이 변환</h1>
+	
+	
+	
+	<!-- <table class="table">
+	
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>품목</th>
+			</tr>
+		</thead>
 		
-		<form method="post" action="/jsp/test05_2.jsp">
-		<!--  form-control 주면 뒤에 cm 까지 한 줄에 다 안 나와서 div 추가 -->
-			<div class="d-flex">
-				<input type="text" class="form-control col-3" name="length">cm
-			</div>
-			<!--  div 추가 -->
-			<div>
-				<label>인치<input type="checkbox" name="type" value="inch" ></label>
-				<label>야드<input type="checkbox" name="type" value="yard" ></label>
-				<label>피트<input type="checkbox" name="type" value="feet" ></label>
-				<label>미터<input type="checkbox" name="type" value="meter" ></label>
-			</div>
-			<button type="submit" class="btn btn-primary">변환</button>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>저지방 우유</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>요플레 4개</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>딸기 1팩</td>
+			</tr>
+	</table> -->
+	<% List<String> goodsList = Arrays.asList(new String[]{ 
+		    "저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
+		});
+		
+		
+		%>
+		
+	
+		
+	
+	<h1 class="text-center"> 장 목록</h1>
+		
+	<table class="table">
+	 	<thead>
+	 		<tr>
+	 			<th>번호</th>
+	 			<th>품목</th>
+	 		</tr>
+	 	
+	 	</thead>
+	 	
+	 	
+	 	<tbody>
+	 		<%
+			for(int i = 0; i < goodsList.size(); i++) {
+				String goods = goodsList.get(i);
+			%>
+			<tr>
+	 			<td><%=i+1 %></td>
+	 			<td><%= goods%></td>
+			</tr>
 			
-		</form>
-	</div>
+			<% }%>
+				
+	 	</tbody>
+	 
+	 
+	 
+	 
+	 
+	 </table>
+	
+	
+	
 </body>
 </html>

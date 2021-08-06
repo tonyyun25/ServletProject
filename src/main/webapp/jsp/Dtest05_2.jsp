@@ -12,24 +12,57 @@
 
 </head>
 <body>
-	<div class="container">
-		<h1>길이 변환</h1>
+	<% 
+		int centimeter = Integer.parseInt(request.getParameter("length"));
+		String[] types = request.getParameterValues("type");
 		
-		<form method="post" action="/jsp/test05_2.jsp">
-		<!--  form-control 주면 뒤에 cm 까지 한 줄에 다 안 나와서 div 추가 -->
-			<div class="d-flex">
-				<input type="text" class="form-control col-3" name="length">cm
-			</div>
-			<!--  div 추가 -->
-			<div>
-				<label>인치<input type="checkbox" name="type" value="inch" ></label>
-				<label>야드<input type="checkbox" name="type" value="yard" ></label>
-				<label>피트<input type="checkbox" name="type" value="feet" ></label>
-				<label>미터<input type="checkbox" name="type" value="meter" ></label>
-			</div>
-			<button type="submit" class="btn btn-primary">변환</button>
-			
-		</form>
-	</div>
+		
+	
+	
+	%>
+	
+	<h2> 변환 결과</h2>
+	<h3><%= centimeter%></h3>cm
+	<hr>
+	
+	
+	<% 
+	
+	
+	
+	double result = 0;
+	
+	
+	for(int i = 0; i < types.length; i++) {
+		if(types[i].equals("inch")) {
+			result = centimeter * 0.3937; 
+			%>
+			<h3><%= result %> in</h3>
+			<% 
+		} 
+		
+		else if(types[i].equals("yard")) {
+			result = centimeter * 0.01093; 
+			%>
+			<h3><%= result %> yd</h3>
+			<% 
+		} 
+		
+		else if(types[i].equals("feet")) {
+			result = centimeter * 0.03280; 
+			%>
+			<h3><%= result %> ft</h3>
+			<% 
+		}
+		
+		else if(types[i].equals("meter")) {
+			result = centimeter * 0.01; 
+			%>
+			<h3><%= result %> m</h3>
+			<% 
+		}
+	}
+	
+	%>
 </body>
 </html>

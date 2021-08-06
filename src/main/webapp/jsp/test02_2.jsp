@@ -12,18 +12,11 @@
 		
 	</head>
 	<body>
-	
-		
-		
 		
 		<!-- 표현식 : 스크립틀릿이나 선언문에 선언된 변수 값이나 메소드의 리턴 값을 출력 
 		Date도 java.util 안에 있음
 		
-		
 		-->
-			
-	
-		
 		<% 
 			// what=date or what=time
 			String what = request.getParameter("what");
@@ -44,12 +37,9 @@
 				//string = "현재날짜 " + string;
 			}
 			else { //시간 조건
-				SimpleDateFormat formatterTime = new SimpleDateFormat("H년 m분 s초");
+				SimpleDateFormat formatterTime = new SimpleDateFormat("H시 m분 s초");
 				string = formatterTime.format(now);
 			}
-			
-			
-		
 		%>
 		
 		<div>

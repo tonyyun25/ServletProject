@@ -12,24 +12,18 @@
 
 </head>
 <body>
+
+	
+
 	<div class="container">
-		<h1>길이 변환</h1>
-		
-		<form method="post" action="/jsp/test05_2.jsp">
-		<!--  form-control 주면 뒤에 cm 까지 한 줄에 다 안 나와서 div 추가 -->
-			<div class="d-flex">
-				<input type="text" class="form-control col-3" name="length">cm
-			</div>
-			<!--  div 추가 -->
-			<div>
-				<label>인치<input type="checkbox" name="type" value="inch" ></label>
-				<label>야드<input type="checkbox" name="type" value="yard" ></label>
-				<label>피트<input type="checkbox" name="type" value="feet" ></label>
-				<label>미터<input type="checkbox" name="type" value="meter" ></label>
-			</div>
-			<button type="submit" class="btn btn-primary">변환</button>
-			
+		<h1>메뉴검색</h1>
+		<form method="get" action="/jsp/Dtest07_2.jsp">
+			<input type="text" name="menu">
+			<input type="checkbox" value="true" name="startPointFilter">4점 이하 제외<br>
+			<input type="submit" value="검색" class="btn btn-success mt-3">
 		</form>
 	</div>
+	
+
 </body>
-</html>
+</html> 
