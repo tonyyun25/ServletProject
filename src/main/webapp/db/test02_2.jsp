@@ -16,7 +16,7 @@
 		
 		
 		
-		<button type="submit"><a href="">추가</a></button>
+		<button type="submit"><a href="db/test02.jsp">추가</a></button>
 		
 
 		

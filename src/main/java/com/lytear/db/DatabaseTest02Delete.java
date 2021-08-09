@@ -26,7 +26,7 @@ public class DatabaseTest02Delete extends HttpServlet {
 		
 		
 		
-		String deleteQuery = "DELETE * FROM `urlAddress` WHERE `id` = " + id; 
+		String deleteQuery = "DELETE FROM `urlAddress` WHERE `id` = " + id; 
 		int count = mysqlService.update(deleteQuery);
 		
 		out.println("삭제 성공 : " + count);
