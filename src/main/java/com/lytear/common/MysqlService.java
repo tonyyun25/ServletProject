@@ -9,9 +9,10 @@ import java.sql.Statement;
 public class MysqlService {
 
 	// 다 끝나고 싱글턴 방법 아래 추가
+	// ===============   싱글턴 패턴 추가  ========================
 	private static MysqlService mysqlService = null;//클래스 설계 순간부터 MysqlService 변수 만들어짐 (객체 없어도)
 	// 변수 앞 static : 클래스 객체 생성 되던 안 되던 변수 만들어짐. 클래스에 속해진 딱 하나의 변수가 됨
-	
+	// ===============   싱글턴 패턴 추가  ========================
 	
 	// 라이브러리에 접속하는 방법을 간단 명표하게 바꾸는 방법. 우선 DB 접속시 필요한 멤버 변수
 	// url, userId, password
@@ -22,7 +23,7 @@ public class MysqlService {
 	// 멤버 변수 초기화 => 생성자 만들어서 씀. url,userId, password 다 알고 있으므로 파라미터로 외부에서 받을 필요 X
 	
 	
-	// 접속 관리 객체 : 해당하지 메소드 하나가 아니라 여러 메소드에서 사용하기 위해 멤버 변수로 따로 뺌
+	// 접속 관리 객체 : 해당하는 메소드 하나가 아니라 여러 메소드에서 사용하기 위해 멤버 변수로 따로 뺌
 	private Connection connection;
 	private Statement statement;
 	
@@ -33,7 +34,7 @@ public class MysqlService {
 		this.password = "root";
 		
 	}
-	
+	// ===============   싱글턴 패턴 추가  ========================
 	// static 변수 사용시 메소드도  static 이면 좋음
 	public static MysqlService getInstance() {
 		// new + 로 객체 생성 X. getInstance() 호출해서 사용. static 메소드이니 객체생성 상관 없음
@@ -43,7 +44,7 @@ public class MysqlService {
 		
 		return mysqlService; // 최초 객체 생성 이후에는 계속 돌려 씀
 	}
-	
+	// ===============   싱글턴 패턴 추가  ========================
 	
 	
 	
