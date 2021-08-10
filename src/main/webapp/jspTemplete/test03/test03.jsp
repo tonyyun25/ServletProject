@@ -22,10 +22,10 @@
 	MysqlService mysqlService = MysqlService.getInstance();		
 	mysqlService.connect();
 	String query = "SELECT used_goods.title, used_goods.price, seller.nickname 
-			FROM `seller`
-			JOIN `used_goods`
-			ON seller.id=used_good.sellerId;
-";
+			FROM `seller` 
+			JOIN `used_goods` 
+			ON seller.id=used_goods.sellerId;"
+	
 	ResultSet result = mysqlService.select(query);
 	
 	%>
@@ -48,7 +48,7 @@
 		<div  class="main-link">
 			
 			<div>
-				<img width="250" src="https://media.istockphoto.com/photos/laptop-with-blank-screen-on-table-in-office-loft-interior-building-picture-id1128886108?b=1&k=6&m=1128886108&s=170667a&w=0&h=KsOIsSD1aeCv8y5By2h2xJz2Pq-TPyBuELUfZYq9_Jo=">
+				<img width="250" src="<%=result.getString("picture") %>">
 			</div>
 			
 			
@@ -56,7 +56,7 @@
 			
 			
 			<div class="price"><%=result.getInt("price") %></div>
-			<div class="seller">최준</div>
+			<div class="seller"><%=result.getString("nickname") %></div>
 		</div>
 		
 		
