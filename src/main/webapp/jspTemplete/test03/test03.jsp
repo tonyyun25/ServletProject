@@ -21,10 +21,7 @@
 	<%
 	MysqlService mysqlService = MysqlService.getInstance();		
 	mysqlService.connect();
-	String query = "SELECT used_goods.title, used_goods.price, seller.nickname 
-			FROM `seller` 
-			JOIN `used_goods` 
-			ON seller.id=used_goods.sellerId;"
+	String query = "SELECT used_goods.picture, used_goods.title, used_goods.price, seller.nickname FROM `seller` JOIN `used_goods` ON seller.id=used_goods.sellerId ORDER BY used_goods.id DESC;";
 	
 	ResultSet result = mysqlService.select(query);
 	
@@ -48,7 +45,20 @@
 		<div  class="main-link">
 			
 			<div>
+				
+				<%
+					String picture = result.getString("picture");
+					if(picture!=null) {
+					%>
 				<img width="250" src="<%=result.getString("picture") %>">
+					<% } else {
+					
+					%>
+					<div class="photo bg-success" >이미지 없음</div>
+					
+					<%} %>
+					
+				
 			</div>
 			
 			
