@@ -6,7 +6,7 @@ nav {height : 50px; background-color: salmon;}
 .main-link:hover {background-color:teal}
 .content {height : 600px;}
 
-.photo {width: 250px; background-color: red; font-size: 30px;}
+.photo {width: 250px; height: 170px; font-size: 15px; color:grey;}
 
 
 footer {height : 30px; font-size: 8px;}
@@ -17,4 +17,8 @@ footer {height : 30px; font-size: 8px;}
 .price {font-size: 10px; color : grey;}
 .seller {font-size: 10px; color: orange;}
 
+.contents {font-size: 30px; color: grey;}
 
+.box {width: 500px;}
+.box-2 {width: 595px;}
+.box-3 {width: 540px;} 
