@@ -3,6 +3,7 @@ package com.lytear.db;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,13 +32,31 @@ public class DatabaseTest03Insert extends HttpServlet {
 		// nickname 파라미터로 받는 법
 		
 		
+		int sellerId = 0;//
+		// 아래 ResultSet은 테스트
+				String query = "SELECT `id`,`nickname` FROM `seller`;";
+				ResultSet result = mysqlService.select(query);
+				try {
+					while(result.next()) {
+						if(result.getString("nickname").equals(nickname)) {
+							sellerId = result.getInt("id");
+						}
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				// 여기까지 테스트
+		
 		String insertQuery = "INSERT INTO `used_goods`\r\n"
 				+ "(`sellerId`,`title`,`price`,`description`,`picture`,`createdAt`,`updatedAt`)\r\n"
 				+ "VALUES\r\n"
-				+ "(1,'" + title + "'," + price + ",'" + description + "','" + picture + "',now(),now());";
+				+ "(" + sellerId + ",'" + title + "'," + price + ",'" + description + "','" + picture + "',now(),now());";
 		
 		
 //		https://pixabay.com/ko/images/search/xbox/
+		
+		
+		
 		int count = mysqlService.update(insertQuery);
 		out.println("입력 성공 : " + count);
 		
