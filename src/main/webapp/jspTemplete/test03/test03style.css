@@ -1,0 +1,18 @@
+
+.wrap {width: 800px; margin: auto;}
+header {height : 50px; background-color: salmon; font-size: 30px;}
+nav {height : 50px; background-color: salmon;}
+.nav-link {color: white;}
+.main-link:hover {background-color:teal}
+.content {height : 600px;}
+footer {height : 30px; font-size: 8px;}
+
+
+
+.title {font-size : 10px; font-weight: bold; }
+.price {font-size: 10px; color : grey;}
+.seller {font-size: 10px; color: orange;}
+.box1 {width : 250px; height : 166px; background-color: yellow;}
+.box2 {width : 250px; height : 166px; background-color: grey;}
+
+

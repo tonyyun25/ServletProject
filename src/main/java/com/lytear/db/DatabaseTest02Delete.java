@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.lytear.common.MysqlService;
 
-@WebServlet("/db/test02_delete")
+@WebServlet("/db/test02/delete")
 public class DatabaseTest02Delete extends HttpServlet {
 
 	@Override
@@ -27,9 +27,15 @@ public class DatabaseTest02Delete extends HttpServlet {
 		
 		
 		String deleteQuery = "DELETE FROM `urlAddress` WHERE `id` = " + id; 
-		int count = mysqlService.update(deleteQuery);
+		// id가 숫자지만 문자열로 쓰일 거라 변환 안 함
+		mysqlService.update(deleteQuery);
 		
-		out.println("삭제 성공 : " + count);
+//		out.println("삭제 성공 : " + count);
+		
+		// db 사용 하고 나서 (redirect 하기 전에) 남들도 쓸 수 있게 disconnect. 다 들어가야 함
+		
+		
+		response.sendRedirect("/db/test02_1.jsp");
 		
 		
 	}
