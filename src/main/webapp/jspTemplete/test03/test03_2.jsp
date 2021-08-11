@@ -96,7 +96,11 @@
 			
 		</div>
 	</div>
-		<!--  판매자, 제목, 가격에 유효성 검사. type="text/javascript" 적용 -->
+		<!--  판매자, 제목, 가격에 유효성 검사. type="text/javascript" 적용 
+		참고 : https://velog.io/@ansalstmd/JSP8.-%EC%9C%A0%ED%9A%A8%EC%84%B1-%EA%B2%80%EC%82%AC 
+		아이디 선택 안 하거나 가격 입력 안 하면 판매리스트 등록 안됨. 제목은 입력 안 해도 판매리스트 등록 됨
+		-->
+	
 	<script type="text/javascript"> 
 		$(document).ready(function(){
 			$("#lookupBtn").on("click",function(){
@@ -118,22 +122,12 @@
 					alert("가격을 입력해 주세요");
 					return;
 				}
-				
-				
 			});
-			
-			
-			
-			
 		});
-	
-		
-	
-	
-	
-	
-	
-	
 	</script>
+	
+	
+	
+	
 </body>
 </html>
