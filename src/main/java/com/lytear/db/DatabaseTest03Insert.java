@@ -14,7 +14,7 @@ import com.lytear.common.MysqlService;
 public class DatabaseTest03Insert extends HttpServlet {
 
 	@Override
-	public void doGet (HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public void doPost (HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		response.setContentType("text/html");		
 
@@ -23,7 +23,7 @@ public class DatabaseTest03Insert extends HttpServlet {
 		MysqlService mysqlService = MysqlService.getInstance();
 		mysqlService.connect();
 		
-		String nickname = request.getParameter("nickname");
+		String sellerId = request.getParameter("id");
 		String title = request.getParameter("title");
 		String price = request.getParameter("price");//int 이나 String 처리
 		String description = request.getParameter("description");
@@ -31,7 +31,7 @@ public class DatabaseTest03Insert extends HttpServlet {
 		// nickname 파라미터로 받는 법
 		
 		
-		int sellerId = 0;//
+//		int sellerId = 0;//
 		// 아래 ResultSet은 테스트
 			/*
 				String query = "SELECT `id`,`nickname` FROM `seller`;";

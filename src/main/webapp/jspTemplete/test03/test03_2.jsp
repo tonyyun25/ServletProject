@@ -20,9 +20,15 @@
  	MysqlService mysqlService = MysqlService.getInstance();
  	mysqlService.connect();
  	
- 	String query = "SELECT `nickname` FROM `seller`;";
+ 	String query = "SELECT `id`,`nickname` FROM `seller`;";
  	ResultSet result = mysqlService.select(query);
- 	
+ 	 
+ 	/*2. 전에 설명드린대로 input 하는 곳에서 seller 테이블에 대한 select를 수행을 해서 
+ 	input select box를 채우는 형태로 만들어야 합니다. 
+ 	그러면 거기에서 selleId도 같이 가져올수 있으니 이를 활용하면 입력 화면에서 sellerId를 전달할수 있을겁니다. 
+ 	파라미터로 nickname 이 아니라 sellerID를 직접 받는 형태가 더욱 좋습니다. 
+ 	그 방법으로 한번 강구해보시면 좋을거 같아요 
+ 	*/ 
  	
  	%>
  	
@@ -37,20 +43,29 @@
 				<div class="contents mb-3">물건 올리기</div>
 				
 				<div class="d-flex">	
-					<select name="" class="">
-						<option value="">-아이디선택-</option>
-						<% while(result.next()) { %>
+					<select name="nickname" class="">
+						<option value="default">-아이디선택-</option>
+						<% 
 						
-						<option value=""><%=result.getString("nickname") %></option>
+						String sellerId = "";
+						while(result.next()) { %>
+						
+						<option value="person"><%=result.getString("nickname") %></option>
+						<%sellerId = result.getString("id"); %>
+						
 						
 						<%} %>
 						
 					</select>
 					
-					<input type="text" class="ml-4" name="" placeholder="제목">
+					<%
+					
+					
+					%>
+					<input type="text" class="ml-4" name="title" placeholder="제목">
 					
 					<div class="input-group ml-4">
-						<input type="text"	placeholder="가격">		
+						<input type="text"	name="price" placeholder="가격">		
 						<div class="input-group-append">
 							<span class="input-group-text">원</span>
 						</div>
@@ -64,7 +79,7 @@
 						<span class="input-group-text">설명</span>
 					
 					</div>
-					<textarea class="box-3"></textarea>
+					<textarea class="box-3" name="description" ></textarea>
 				</div>
 				
 				<div class="input-group mt-3 ">
@@ -72,7 +87,7 @@
 						<span class="input-group-text">이미지 url</span>
 					
 					</div>
-					<input type="text" class="box">
+					<input type="text" class="box" name="picture" >
 				</div>
 				
 				<button type="submit" class="btn btn-light mt-3 box-2">저장</button>

@@ -26,9 +26,6 @@
 		ResultSet result = mysqlService.select(query);
 		
 		%>
-				
-		
-		
 		<jsp:include page="header.jsp" />
 		
 		<jsp:include page="menu.jsp" /> 
@@ -36,12 +33,7 @@
 		<section  class=" d-flex flex-wrap justify-content-around mt-3">
 			<%
 			while(result.next()) {
-				
-				
-				
 			%>
-			
-		
 			<div  class="main-link">
 				
 				<div class="">
@@ -57,25 +49,18 @@
 						<div class="photo d-flex align-items-center justify-content-center" >
 						
 							<div class="">이미지 없음</div>
-						
-						
 						</div>
 						
 						<%} %>
-						
 					
 				</div>
 				
 				
 				<div class="title"><%=result.getString("title") %></div>
 				
-				
 				<div class="price"><%=result.getInt("price") %></div>
 				<div class="seller"><%=result.getString("nickname") %></div>
 			</div>
-			
-			
-			
 			<% 	
 			}
 			
