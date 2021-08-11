@@ -43,10 +43,11 @@
 						<option >-아이디선택-</option>
 						<% 
 						
-						String sellerId = "";
+						
 						while(result.next()) { %>
 						
-						<option value="person"><%=result.getInt("id")%><%=result.getString("nickname") %></option>
+						<option value="person"><%=result.getString("nickname") %></option>
+						String sellerId = result.getInt("id");
 						
 						<%} %>
 					</select>
