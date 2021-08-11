@@ -23,8 +23,9 @@ public class DatabaseTest03Insert extends HttpServlet {
 		MysqlService mysqlService = MysqlService.getInstance();
 		mysqlService.connect();
 		
-//		String nickname = request.getParameter("nickname");
+		//String nicknameString = request.getParameter("nickname");
 		String sellerId = request.getParameter("id");
+		
 		String title = request.getParameter("title");
 		String price = request.getParameter("price");//int 이나 String 처리
 		String description = request.getParameter("description");

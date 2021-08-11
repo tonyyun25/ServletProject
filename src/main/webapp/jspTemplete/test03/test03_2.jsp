@@ -34,20 +34,22 @@
 		<jsp:include page = "header.jsp" />
 		<jsp:include page = "menu.jsp" />
 		<div class="d-flex justify-content-center mt-3" >
-		
+		<!--  ★★ 입력 화면 -->
 			<form method="post" action="/db/test03/insert">
 				<div class="contents mb-3">물건 올리기</div>
 				
 				<div class="d-flex">	
 					<select name="nickname" class="">
 						<option >-아이디선택-</option>
+						<!--  select box에서 getParameter 받아온 예제 : Servlet/jsp/ post method 1.
+						 오류 검증 : HTML과 자바스크립트 종합문제 -->
 						<% 
 						
-						
+						int sellerId = 0;
 						while(result.next()) { %>
 						
-						<option value="person"><%=result.getString("nickname") %></option>
-						String sellerId = result.getInt("id");
+						<option value="<%=result.getInt("id") %>"><%=result.getString("nickname") %></option>
+						<!--  sellerId = result.getInt("id");-->
 						
 						<%} %>
 					</select>
