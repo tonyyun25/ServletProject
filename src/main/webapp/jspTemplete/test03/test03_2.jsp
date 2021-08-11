@@ -46,7 +46,7 @@
 						String sellerId = "";
 						while(result.next()) { %>
 						
-						<option value="person"><a href="/db/test03/insert?sellerId=<%=result.getString("id")%>"><%=result.getString("nickname") %></a></option>
+						<option value="person"><%=result.getInt("id")%><%=result.getString("nickname") %></option>
 						
 						<%} %>
 					</select>
