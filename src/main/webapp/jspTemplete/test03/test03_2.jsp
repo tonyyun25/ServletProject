@@ -27,16 +27,12 @@
  	input select box를 채우는 형태로 만들어야 합니다. 
  	그러면 거기에서 selleId도 같이 가져올수 있으니 이를 활용하면 입력 화면에서 sellerId를 전달할수 있을겁니다. 
  	파라미터로 nickname 이 아니라 sellerID를 직접 받는 형태가 더욱 좋습니다. 
- 	그 방법으로 한번 강구해보시면 좋을거 같아요 
- 	*/ 
- 	
+ 	그 방법으로 한번 강구해보시면 좋을거 같아요 */ 
  	%>
- 	
  	<div class="wrap">
  	
 		<jsp:include page = "header.jsp" />
 		<jsp:include page = "menu.jsp" />
-		
 		<div class="d-flex justify-content-center mt-3" >
 		
 			<form method="post" action="/db/test03/insert">
@@ -44,23 +40,17 @@
 				
 				<div class="d-flex">	
 					<select name="nickname" class="">
-						<option value="default">-아이디선택-</option>
+						<option >-아이디선택-</option>
 						<% 
 						
 						String sellerId = "";
 						while(result.next()) { %>
 						
-						<option value="person"><%=result.getString("nickname") %></option>
-						<%sellerId = result.getString("id"); %>
-						
+						<option value="person"><a href="/db/test03/insert?sellerId=<%=result.getString("id")%>"><%=result.getString("nickname") %></a></option>
 						
 						<%} %>
-						
 					</select>
-					
 					<%
-					
-					
 					%>
 					<input type="text" class="ml-4" name="title" placeholder="제목">
 					
