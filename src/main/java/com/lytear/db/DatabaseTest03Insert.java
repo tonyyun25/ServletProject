@@ -2,8 +2,7 @@ package com.lytear.db;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +14,7 @@ import com.lytear.common.MysqlService;
 public class DatabaseTest03Insert extends HttpServlet {
 
 	@Override
-	public void doPost (HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public void doGet (HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		response.setContentType("text/html");		
 
@@ -34,6 +33,7 @@ public class DatabaseTest03Insert extends HttpServlet {
 		
 		int sellerId = 0;//
 		// 아래 ResultSet은 테스트
+			/*
 				String query = "SELECT `id`,`nickname` FROM `seller`;";
 				ResultSet result = mysqlService.select(query);
 				try {
@@ -45,6 +45,7 @@ public class DatabaseTest03Insert extends HttpServlet {
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
+				*/
 				// 여기까지 테스트
 		
 		String insertQuery = "INSERT INTO `used_goods`\r\n"
