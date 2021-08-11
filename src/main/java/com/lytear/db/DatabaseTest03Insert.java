@@ -60,9 +60,9 @@ public class DatabaseTest03Insert extends HttpServlet {
 		
 		
 		
-		int count = mysqlService.update(insertQuery);
-		out.println("입력 성공 : " + count);
-		
+		mysqlService.update(insertQuery);
+//		out.println("입력 성공 : " + count);
+		response.sendRedirect("/jspTemplete/test03/test03_1.jsp");
 		
 		
 		
