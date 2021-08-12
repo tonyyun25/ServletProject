@@ -40,7 +40,7 @@
 					
 					<%
 						String picture = result.getString("picture");
-						if(picture!=null && picture!="") {
+						if(picture!=null && !picture.equals("")) {
 						%>
 					<img width="250" height="170" src="<%=result.getString("picture") %>">
 						<% } else {
