@@ -84,7 +84,7 @@
 						<span class="input-group-text">이미지 url</span>
 					
 					</div>
-					<input type="text" class="box" name="picture" >
+					<input type="text" class="box" name="picture" id="picture">
 				</div>
 			
 				
@@ -108,6 +108,7 @@
 				var title = $("#title").val().trim();
 				var price = $("#price").val().trim();
 				var seller = $("#nicknameSector").val().trim();
+				/*var picture = $("#picture").val().trim();*/
 				
 				if(seller == 'custom') {
 					alert("판매자를 선택해 주세요");
@@ -122,6 +123,12 @@
 					alert("가격을 입력해 주세요");
 					return;
 				}
+				/*if(picture == null || picture =="") {
+					$("#picture").val()='null';
+				}*/
+				
+				
+				
 			});
 		});
 	</script>
