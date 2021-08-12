@@ -27,7 +27,9 @@ public class DatabaseTest03Insert extends HttpServlet {
 		String sellerId = request.getParameter("nickname");
 		
 		String title = request.getParameter("title");
+//		out.println("title = " + title);
 		String price = request.getParameter("price");//int 이나 String 처리
+//		out.println("price = " + price);
 		String description = request.getParameter("description");
 		String picture = request.getParameter("picture");
 		// nickname 파라미터로 받는 법
@@ -59,8 +61,10 @@ public class DatabaseTest03Insert extends HttpServlet {
 //		https://pixabay.com/ko/images/search/xbox/
 		
 		
+		if(title!=null && title!="") { // 21.08.12일 18:18분 조건 새로 추가
+			mysqlService.update(insertQuery);
+		}
 		
-		mysqlService.update(insertQuery);
 //		out.println("입력 성공 : " + count);
 		response.sendRedirect("/jspTemplete/test03/test03_1.jsp");
 		
